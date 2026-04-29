@@ -503,6 +503,68 @@ html, body { width:100%; max-width:100%; overflow-x:hidden; -webkit-text-size-ad
   .btn{font-size:13px;min-height:48px;}
 }
 
+
+
+/* ===== HARD FIX 2026-04-29_14-54: Instagram / GitHub Pages mobile product cards ===== */
+@media screen and (max-width: 820px){
+  .products-wrap{
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    padding: 14px 14px 96px !important;
+  }
+  .product-card{
+    width: 100% !important;
+    max-width: 520px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .gallery{
+    height: 230px !important;
+  }
+  .product-info{
+    padding: 14px 14px 4px !important;
+  }
+  .product-name{
+    font-size: 16px !important;
+    line-height: 1.35 !important;
+  }
+  .price-row-label{
+    font-size: 12px !important;
+  }
+  .price-row-value{
+    font-size: 14px !important;
+  }
+  .price-row-value.green{
+    font-size: 18px !important;
+  }
+  .product-desc{
+    font-size: 13px !important;
+    line-height: 1.55 !important;
+    display: block !important;
+    overflow: visible !important;
+  }
+  .stock-label{
+    font-size: 11px !important;
+    padding: 5px 12px !important;
+  }
+  .product-btns{
+    padding: 12px 14px 14px !important;
+    gap: 10px !important;
+  }
+  .btn{
+    min-height: 52px !important;
+    height: auto !important;
+    font-size: 14px !important;
+    border-radius: 12px !important;
+    line-height: 1.25 !important;
+    white-space: normal !important;
+  }
+  .btn-buy{
+    min-height: 40px !important;
+    height: auto !important;
+    font-size: 12px !important;
+  }
+}
 </style>
 </head>
 <body>

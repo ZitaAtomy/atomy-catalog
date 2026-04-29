@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Atomy — Каталог</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -461,6 +461,47 @@ font-size:10px;}
 .hero-search .catalog-search-suggest{z-index:1300;}
 .main-wrap{position:relative;z-index:1;}
 
+
+
+/* ===== FIX 2026-04-29: Instagram / iOS WebView mobile layout ===== */
+html, body { width:100%; max-width:100%; overflow-x:hidden; -webkit-text-size-adjust:100%; text-size-adjust:100%; }
+.products-wrap,.product-card,.product-info,.product-btns,.price-row,.price-row-item,.btn,.gallery,.catalog-tools,.catalog-tools-inner,.cat-page-header,header{min-width:0;max-width:100%;}
+.product-card{width:100%;}
+.product-name,.product-desc,.price-row-label,.price-row-value,.btn,.btn-buy,.stock-label,.cat-page-title,.cat-page-sub{overflow-wrap:anywhere;word-break:normal;hyphens:auto;}
+.price-row-item{gap:8px;}
+.price-row-value{text-align:right;flex-shrink:0;}
+.btn{white-space:normal;text-align:center;line-height:1.2;padding-left:8px;padding-right:8px;}
+@media (max-width:560px){
+  .products-wrap{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;padding:12px 10px 92px;}
+  .gallery{height:152px;}
+  .gallery-slide img{padding:8px;}
+  .gallery-btn{width:30px;height:30px;font-size:14px;}
+  .gallery-btn.prev{left:6px;}
+  .gallery-btn.next{right:6px;}
+  .product-info{padding:11px 10px 4px;}
+  .product-name{font-size:13px;line-height:1.28;}
+  .price-row-item{align-items:flex-start;}
+  .price-row-label{font-size:10.5px;line-height:1.25;}
+  .price-row-value{font-size:12px;line-height:1.2;}
+  .price-row-value.green{font-size:16px;line-height:1.12;}
+  .product-desc{font-size:11px;line-height:1.45;}
+  .product-btns{padding:8px 10px 12px;gap:7px;}
+  .btn{min-height:40px;height:auto;font-size:11px;border-radius:10px;}
+  .btn-primary,.btn-question{border-width:2px;}
+  .btn-buy{min-height:34px;height:auto;font-size:10.5px;}
+  .catalog-tools-inner{gap:8px;}
+  .catalog-search-wrap{min-width:0;flex:1 1 100%;}
+}
+@media (max-width:360px){
+  .products-wrap{grid-template-columns:1fr;padding-left:14px;padding-right:14px;}
+  .gallery{height:210px;}
+  .product-name{font-size:16px;}
+  .price-row-label{font-size:12px;}
+  .price-row-value{font-size:14px;}
+  .price-row-value.green{font-size:18px;}
+  .product-desc{font-size:13px;}
+  .btn{font-size:13px;min-height:48px;}
+}
 
 </style>
 </head>
@@ -1083,7 +1124,7 @@ window.addEventListener('DOMContentLoaded', async () => {
         <div style="font-size:16px;font-weight:700;color:var(--blue);margin-bottom:12px;">⚠️ Для просмотра нужен локальный сервер</div>
         <div style="font-size:13px;color:var(--text2);line-height:1.7;">
           1. Открой Terminal<br>
-          2. Введи: <code style="background:#f0f0f0;padding:2px 6px;border-radius:4px;">cd ~/Desktop/atomy-catalog && python3 -m http.server 8080 --bind localhost
+          2. Введи: <code style="background:#f0f0f0;padding:2px 6px;border-radius:4px;">cd ~/Desktop/atomy-site && python3 -m http.server 8080</code><br>
           3. Открой в браузере: <b>http://localhost:8080</b>
         </div>
       </div>`;
